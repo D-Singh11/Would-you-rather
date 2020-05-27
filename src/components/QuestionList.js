@@ -6,9 +6,14 @@ class QuestionList extends Component {
     render() {
         console.log(this.props);
         return (
-            <ul className='collection'>
-                <li><Question/></li>
-                <li><Question/></li>
+            <ul className='collection' key={this.props.type}>
+                {this.props.qIds.map(id => {
+                    return (
+                        <li className="collection-item" key={id}>
+                            <p>{id}</p>
+                        </li>
+                    )
+                })}
             </ul>
         )
     }
