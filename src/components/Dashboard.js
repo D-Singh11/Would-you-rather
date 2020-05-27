@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Question from './Question';
+import QuestionList from './QuestionList';
 
 class Dashboard extends Component {
     render() {
@@ -18,15 +18,11 @@ class Dashboard extends Component {
                     <div className="card-content">
                         <div id="unanswered">
                             <h2>Unanswered questions</h2>
-                            <ul>
-                                <Question />
-                            </ul>
+                            <QuestionList />
                         </div>
                         <div id="answered">
                             <h2>Answered questions</h2>
-                            <ul>
-                                <Question />
-                            </ul>
+                            <QuestionList />
                         </div>
                     </div>
                 </div>
