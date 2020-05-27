@@ -12,13 +12,23 @@ class App extends React.Component {
     return (
       <div>
         <NavBar />
-        <div className="App container">
-          <h1>Would you rather</h1>
-          <Dashboard />
-        </div>
+        {
+          this.props.loading === true ? null :
+
+            <div className="App container">
+              <h1>Would you rather</h1>
+              <Dashboard />
+            </div>
+        }
       </div>
     );
   }
 }
 
-export default connect()(App);
+function mapStateToProps(state) {
+  return {
+    loading: state.authedUser === null           // if autheduser is null that means data from API has not been assigned to store yet.
+  }
+}
+
+export default connect(mapStateToProps)(App);

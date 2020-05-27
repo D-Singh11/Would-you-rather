@@ -3,7 +3,7 @@ import { setQuestionsAction } from './questions';
 import { setAuthedUserAction } from './authedUser';
 import { getInitialData } from '../utils/api';
 
-const AUTHED_ID = 'fnameSname';             // todo: replace with authentication
+const AUTHED_ID = 'sarahedo';             // todo: replace with authentication
 
 export function handleInitialData() {
     return (dispatch) => {
