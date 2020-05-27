@@ -1,7 +1,8 @@
 import React from 'react';
 import { handleInitialData } from './actions/shared';
 import { connect } from 'react-redux';
-import NavBar from './components/NavBar'
+import NavBar from './components/NavBar';
+import Dashboard from './components/Dashboard';
 
 class App extends React.Component {
   componentDidMount() {
@@ -9,9 +10,12 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="App container">
+      <div>
         <NavBar />
-        <h1>Would you rather</h1>
+        <div className="App container">
+          <h1>Would you rather</h1>
+          <Dashboard />
+        </div>
       </div>
     );
   }
