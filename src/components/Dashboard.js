@@ -17,13 +17,13 @@ class Dashboard extends Component {
                     </div>
                     <div className="card-content">
                         <div id="unanswered">
-                            <h2>Answered questions</h2>
+                            <h2>Unanswered questions</h2>
                             <ul>
                                 <Question />
                             </ul>
                         </div>
                         <div id="answered">
-                            <h2>Unanswered questions</h2>
+                            <h2>Answered questions</h2>
                             <ul>
                                 <Question />
                             </ul>

@@ -13,7 +13,8 @@ class Question extends Component {
                             </div>
                             <div className="card-stacked">
                                 <div className="card-content">
-                                    <p>Would you rather be a good person or not?</p>
+                                <h5 className="header">Would you rather</h5>
+                                    <span>Would you rather be a good person or not?</span>
                                 </div>
                             </div>
                         </div>
