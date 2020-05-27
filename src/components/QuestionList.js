@@ -10,7 +10,7 @@ class QuestionList extends Component {
                 {this.props.qIds.map(id => {
                     return (
                         <li className="collection-item" key={id}>
-                            <p>{id}</p>
+                            < Question id={id} />
                         </li>
                     )
                 })}
