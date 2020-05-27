@@ -3,6 +3,12 @@ import { handleInitialData } from './actions/shared';
 import { connect } from 'react-redux';
 import NavBar from './components/NavBar';
 import Dashboard from './components/Dashboard';
+import { Route } from 'react-router-dom';
+import NewQuestion from './components/NewQuestion';
+import LeaderBoard from './components/LeaderBoard';
+import Poll from './components/Poll';
+import PollDetail from './components/PollDetail';
+import Login from './components/Login';
 
 class App extends React.Component {
   componentDidMount() {
@@ -17,7 +23,12 @@ class App extends React.Component {
 
             <div className="App container">
               <h1>Would you rather</h1>
-              <Dashboard />
+              <Route exact path='/' component={Dashboard} />
+              <Route path='/newQuestion' component={NewQuestion} />
+              <Route path='/leaderboard' component={LeaderBoard} />
+              <Route path='/poll/:id' component={Poll} />
+              <Route path='/detail/:id' component={PollDetail} />
+              <Route path='/login' component={Login} />
             </div>
         }
       </div>
