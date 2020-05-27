@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Question from './Question';
 
 class Dashboard extends Component {
     render() {
@@ -10,13 +11,23 @@ class Dashboard extends Component {
                     </div>
                     <div className="card-tabs">
                         <ul className="tabs tabs-fixed-width grey lighten-4">
-                            <li className="tab"><a href="#unanswered">Unanswered</a></li>
-                            <li className="tab"><a className="active" href="#answered">Answered</a></li>
+                            <li className="tab"><a className="active" href="#unanswered">Unanswered</a></li>
+                            <li className="tab"><a href="#answered">Answered</a></li>
                         </ul>
                     </div>
                     <div className="card-content">
-                        <div id="unanswered">Test 1</div>
-                        <div id="answered">Test 2</div>
+                        <div id="unanswered">
+                            <h2>Answered questions</h2>
+                            <ul>
+                                <Question />
+                            </ul>
+                        </div>
+                        <div id="answered">
+                            <h2>Unanswered questions</h2>
+                            <ul>
+                                <Question />
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
