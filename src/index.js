@@ -6,13 +6,16 @@ import './index.css';
 import App from './App';
 import reducers from './reducers';
 import middlewares from './middleware';
+import { BrowserRouter } from 'react-router-dom';
 
 
 const store = createStore(reducers, middlewares);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );
