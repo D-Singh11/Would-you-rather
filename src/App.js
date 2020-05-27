@@ -1,7 +1,7 @@
 import React from 'react';
 import { handleInitialData } from './actions/shared';
 import { connect } from 'react-redux';
-import NavBar from './components'
+import NavBar from './components/NavBar'
 
 class App extends React.Component {
   componentDidMount() {
