@@ -7,9 +7,8 @@ class QuestionList extends Component {
         console.log(this.props);
         return (
             <ul className='collection'>
-                <Question/>
-                <Question/>
-                <Question/>
+                <li><Question/></li>
+                <li><Question/></li>
             </ul>
         )
     }
