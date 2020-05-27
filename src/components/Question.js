@@ -1,7 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { formatTweet, formatDate } from '../utils/_DATA';
 
 class Question extends Component {
     render() {
+        console.log('Question', this.props);
+        const {id, question} = this.props;
         return (
             <div className="col s12 m7">
                 <div className="card horizontal">
@@ -21,4 +25,14 @@ class Question extends Component {
     }
 }
 
-export default Question
+function mapStateToProps({ users, questions, authedUser }, props) {
+    const author = users[authedUser].name;
+    let question = questions[props.id];
+
+    return {
+        ...question,
+        author
+    }
+}
+
+export default connect(mapStateToProps)(Question);
