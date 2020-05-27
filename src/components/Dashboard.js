@@ -7,7 +7,7 @@ class Dashboard extends Component {
             <div>
                 <div className="card">
                     <div className="card-content">
-                        <span class="card-title">All questions</span>
+                        <span className="card-title">All questions</span>
                     </div>
                     <div className="card-tabs">
                         <ul className="tabs tabs-fixed-width grey lighten-4">
@@ -18,11 +18,11 @@ class Dashboard extends Component {
                     <div className="card-content">
                         <div id="unanswered">
                             <h2>Unanswered questions</h2>
-                            <QuestionList />
+                            <QuestionList type={'unanswered'} />
                         </div>
                         <div id="answered">
                             <h2>Answered questions</h2>
-                            <QuestionList />
+                            <QuestionList type={'answered'}/>
                         </div>
                     </div>
                 </div>

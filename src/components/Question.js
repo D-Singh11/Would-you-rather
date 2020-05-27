@@ -8,7 +8,7 @@ class Question extends Component {
                     <div className="col s12 m7">
                         <div className="card horizontal">
                             <div className="card-image">
-                                <img src="https://lorempixel.com/100/190/nature/6" alt='avatar image' />
+                                <img src="https://lorempixel.com/100/190/nature/6" alt='avatar of user' />
                                 <span className='card-title'>fname lastname</span>
                             </div>
                             <div className="card-stacked">
