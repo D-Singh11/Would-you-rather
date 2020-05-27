@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
+
+
 class Question extends Component {
     render() {
         console.log('Question', this.props);
-        const { author, optionOne } = this.props;
+        const { author, optionOne, id } = this.props;
         return (
             <div className="col s12 m7">
                 <div className="card horizontal">
@@ -16,9 +19,13 @@ class Question extends Component {
                             <h5 className="header">Would you rather?</h5>
                             <span>{optionOne.text}</span>
                         </div>
-                    <div className='card-action amber lighten-2'>
-                        <p className='center white-text'>Poll</p>
-                    </div>
+                        <Link to={`/question/${id}`} className='white-text'>
+                            <div className='card-action amber lighten-2'>
+                                <p className='center '>
+                                    <b>Poll</b>
+                                </p>
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </div>
