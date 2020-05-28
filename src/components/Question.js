@@ -17,7 +17,7 @@ class Question extends Component {
                     <div className="card-stacked">
                         <div className="card-content">
                             <h5 className="header">Would you rather?</h5>
-                            <span>{optionOne.text}</span>
+                            <span>...{optionOne.text}  <br /> OR ..</span>
                         </div>
                         <Link to={`/questions/${id}`} className='white-text'>
                             <div className='card-action amber lighten-2'>
