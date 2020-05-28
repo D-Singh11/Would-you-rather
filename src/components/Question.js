@@ -19,7 +19,7 @@ class Question extends Component {
                             <h5 className="header">Would you rather?</h5>
                             <span>{optionOne.text}</span>
                         </div>
-                        <Link to={`/question/${id}`} className='white-text'>
+                        <Link to={`/questions/${id}`} className='white-text'>
                             <div className='card-action amber lighten-2'>
                                 <p className='center '>
                                     <b>Poll</b>
