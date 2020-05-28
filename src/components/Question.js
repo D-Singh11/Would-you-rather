@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 class Question extends Component {
     render() {
         const { author, optionOne, id } = this.props;
-        const linkType = this.props.type == 'unanswered'
+        const linkType = this.props.type === 'unanswered'
             ? 'questions'
             : 'detail'
             
@@ -25,7 +25,7 @@ class Question extends Component {
                         <Link to={`/${linkType}/${id}`} className='white-text'>
                             <div className='card-action amber lighten-2'>
                                 <p className='center '>
-                                    <b>{linkType == 'questions' ? 'Poll' : 'See details'}</b>
+                                    <b>{linkType === 'questions' ? 'Poll' : 'See details'}</b>
                                 </p>
                             </div>
                         </Link>
