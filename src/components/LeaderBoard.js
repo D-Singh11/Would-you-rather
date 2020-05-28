@@ -3,9 +3,20 @@ import { connect } from 'react-redux';
 
 class LeaderBoard extends Component {
     render() {
+        console.log(this.props);
         return (
             <div>
                 <h1>LeaderBoard</h1>
+                <ul className="collection">
+                    <li className="collection-item">
+                        {this.props.leaders.map(leader => {
+                            return (
+                               <p>{leader.anme}</p>
+                            )
+                        })}
+
+                    </li>
+                </ul>
             </div>
         )
     }
@@ -13,16 +24,18 @@ class LeaderBoard extends Component {
 
 export default connect((state => {
     const userKeys = Object.keys(state.users);
-    const leaders = {}
-    userKeys.map(id => {
+    const leaders = userKeys.map(id => {
         const userQuesIds = state.users[id].questions;
         const userAnswers = Object.keys(state.users[id].answers);
-        leaders[id] = {
+        return {
             'questions': userQuesIds.length,
-            'answers': userAnswers.length
+            'answers': userAnswers.length,
+            'avatarURL': state.users[id].avatarURL,
+            'name': state.users[id].name,
+            'total': userAnswers.length + userQuesIds.length,
         }
     })
     return {
-        leaders
+        leaders: leaders.sort((a, b) => b.total - a.total)
     }
 }))(LeaderBoard);
