@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 
 class Question extends Component {
     render() {
-        console.log('Question', this.props);
         const { author, optionOne, id } = this.props;
+        console.log("ss",this.props);
         return (
             <div className="col s12 m7">
                 <div className="card horizontal">
@@ -34,12 +34,11 @@ class Question extends Component {
 }
 
 function mapStateToProps({ users, questions, authedUser }, props) {
-    const author = users[authedUser].name;
     const question = questions[props.id];
 
     return {
         ...question,
-        author
+        author: questions[props.id].author
     }
 }
 
