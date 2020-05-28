@@ -16,8 +16,13 @@ class Poll extends Component {
 
             this.props.dispatch(handleSaveAnswer(this.props.id, this.state.text));
         }
+        this.setState({
+            text: event.target.value
+        });
 
         this.props.history.push('/');
+        // todo: above push to route doesnot update homepage data even though store was update
+        // deal with it later and remove the temporary fix of calling componentDidMount in QuestionsList()
     }
 
     handleChange = (event) => {
@@ -28,7 +33,6 @@ class Poll extends Component {
     }
 
     render() {
-        console.log('Question', this.props);
         const { author, optionOne, id } = this.props;
         return (
             <div className="card">

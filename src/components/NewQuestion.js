@@ -13,7 +13,9 @@ class NewQuestion extends Component {
                 optionTwoText: this.optionTwo.value.trim(),
                 author: this.props.authedUser
             }));
-            return alert("Dispatch add question action");
+            this.props.history.push('/');
+            // todo: above push to route doesnot update homepage data even though store was update
+            // deal with it later and remove the temporary fix of calling componentDidMount in QuestionsList()
         }
         alert("Provide both options to save new question");
     }
