@@ -9,6 +9,7 @@ import LeaderBoard from './components/LeaderBoard';
 import Poll from './components/Poll';
 import PollDetail from './components/PollDetail';
 import Login from './components/Login';
+import LoadingBar from 'react-redux-loading';
 
 class App extends React.Component {
   componentDidMount() {
@@ -17,6 +18,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <LoadingBar style={{ backgroundColor: 'yellow', height: '5px' }} />
         <NavBar />
         {
           this.props.loading === true ? null :
