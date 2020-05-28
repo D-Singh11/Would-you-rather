@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {handleSaveAnswer} from '../actions/questions';
+import { handleSaveAnswer } from '../actions/questions';
 
 
 class Poll extends Component {
@@ -10,11 +10,11 @@ class Poll extends Component {
     }
 
 
-    handleSubmit=(event)=>{
+    handleSubmit = (event) => {
         event.preventDefault();
         if (this.state.text && this.props.id) {
-            
-            this.props.dispatch(handleSaveAnswer(this.props.id ,this.state.text));
+
+            this.props.dispatch(handleSaveAnswer(this.props.id, this.state.text));
         }
 
         this.props.history.push('/');
@@ -29,12 +29,12 @@ class Poll extends Component {
 
     render() {
         console.log('Question', this.props);
-        const { author, optionOne, id, optionTwo } = this.props;
+        const { author, optionOne, id } = this.props;
         return (
             <div className="card">
                 <div className="card-content center">
                     <div className='center'>
-                        <img src="https://lorempixel.com/100/190/nature/6" alt='avatar of user' className='circle' />
+                        <img src={this.props.avatarURL} alt='avatar of user' className='circle' />
                         <p className='card-title'>{author} asks</p>
                     </div>
                     <h5 className="header">Would you rather?</h5>
@@ -45,7 +45,7 @@ class Poll extends Component {
                                     name="group1"
                                     type="radio"
                                     value='optionOne'
-                                    checked= {this.state.text === 'optionOne'}
+                                    checked={this.state.text === 'optionOne'}
                                     onChange={this.handleChange}
                                 />
                                 <span className='text-black'>{optionOne.text}</span>
@@ -57,7 +57,7 @@ class Poll extends Component {
                                     name="group1"
                                     type="radio"
                                     value='optionTwo'
-                                    checked= {this.state.text === 'optionTwo'}
+                                    checked={this.state.text === 'optionTwo'}
                                     onChange={this.handleChange}
                                 />
                                 <span>{this.props.optionTwo.text}</span>
@@ -81,15 +81,17 @@ class Poll extends Component {
 }
 
 function mapStateToProps({ users, questions, authedUser }, props) {
-    const author = users[authedUser].name;
+    let author = questions[props.match.params.id].author;
+    const avatarURL = users[author].avatarURL;
     const question = questions[props.match.params.id];
-    
+    author = users[author].name;
     const selected = users[authedUser].answers[props.match.params.id];
 
     return {
         ...question,
         author,
-        selected
+        selected,
+        avatarURL
     }
 }
 

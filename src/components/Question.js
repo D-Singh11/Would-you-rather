@@ -11,7 +11,7 @@ class Question extends Component {
             <div className="col s12 m7">
                 <div className="card horizontal">
                     <div className="card-image">
-                        <img src="https://lorempixel.com/100/190/nature/6" alt='avatar of user' />
+                        <img src={this.props.avatarURL} alt='avatar of user' />
                         <span className='card-title'>{author}</span>
                     </div>
                     <div className="card-stacked">
@@ -35,10 +35,13 @@ class Question extends Component {
 
 function mapStateToProps({ users, questions, authedUser }, props) {
     const question = questions[props.id];
+    const author = questions[props.id].author;
+    const avatarURL = users[author].avatarURL;
 
     return {
         ...question,
-        author: questions[props.id].author
+        author,
+        avatarURL
     }
 }
 
