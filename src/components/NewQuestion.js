@@ -1,11 +1,18 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { handleAddQuestion } from '../actions/questions';
+import { connect } from 'react-redux';
 
 class NewQuestion extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
 
-        if(this.optionOne.value.trim() && this.optionTwo.value.trim()){
+        if (this.optionOne.value.trim() && this.optionTwo.value.trim()) {
+            this.props.dispatch(handleAddQuestion({
+                optionOneText: this.optionOne.value.trim(),
+                optionTwoText: this.optionTwo.value.trim(),
+                author: this.props.authedUser
+            }));
             return alert("Dispatch add question action");
         }
         alert("Provide both options to save new question");
@@ -36,4 +43,8 @@ class NewQuestion extends Component {
     }
 }
 
-export default NewQuestion
+export default connect((state => {
+    return {
+        authedUser: state.authedUser
+    }
+}))(NewQuestion);

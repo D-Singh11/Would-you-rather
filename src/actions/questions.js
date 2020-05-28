@@ -44,7 +44,7 @@ export function handleSaveAnswer(qid, answer) {
 export function handleAddQuestion(question) {
     return (dispatch) => {
         return saveQuestion(question).then(question => {
-            dispatch(saveQuestion(question));
+            dispatch(addQuestionAction(question));
         })
     }
 }
