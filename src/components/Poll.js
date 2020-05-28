@@ -8,13 +8,22 @@ class Poll extends Component {
         text: ''
     }
 
+
+    handleSubmit=(event)=>{
+        event.preventDefault();
+
+        // todo: Save ansers to db, dispatch action
+    }
+
     handleChange = (event) => {
         this.setState({
             text: event.target.value
         });
         console.log(event.target.value);
     }
+
     render() {
+        console.log('Question', this.props);
         const { author, optionOne, id, optionTwo } = this.props;
         return (
             <div className="card">
@@ -30,7 +39,7 @@ class Poll extends Component {
                                 <input className="with-gap"
                                     name="group1"
                                     type="radio"
-                                    value={optionOne.text}
+                                    value='optionOne'
                                     onChange={this.handleChange}
                                 />
                                 <span className='text-black'>{optionOne.text}</span>
@@ -41,7 +50,7 @@ class Poll extends Component {
                                 <input className="with-gap"
                                     name="group1"
                                     type="radio"
-                                    value={optionTwo.text}
+                                    value='optionTwo'
                                     onChange={this.handleChange}
                                 />
                                 <span>{this.props.optionTwo.text}</span>
