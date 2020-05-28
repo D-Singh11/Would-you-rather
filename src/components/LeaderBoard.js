@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class LeaderBoard extends Component {
     render() {
@@ -10,4 +11,18 @@ class LeaderBoard extends Component {
     }
 }
 
-export default LeaderBoard
+export default connect((state => {
+    const userKeys = Object.keys(state.users);
+    const leaders = {}
+    userKeys.map(id => {
+        const userQuesIds = state.users[id].questions;
+        const userAnswers = Object.keys(state.users[id].answers);
+        leaders[id] = {
+            'questions': userQuesIds.length,
+            'answers': userAnswers.length
+        }
+    })
+    return {
+        leaders
+    }
+}))(LeaderBoard);
