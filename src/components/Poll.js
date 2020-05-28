@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {handleSaveAnswer} from '../actions/questions';
 
 
 class Poll extends Component {
 
     state = {
-        text: ''
+        text: this.props.selected
     }
 
 
     handleSubmit=(event)=>{
         event.preventDefault();
+        if (this.state.text && this.props.id) {
+            
+            this.props.dispatch(handleSaveAnswer(this.props.id ,this.state.text));
+        }
 
-        // todo: Save ansers to db, dispatch action
+        this.props.history.push('/');
     }
 
     handleChange = (event) => {
@@ -40,6 +45,7 @@ class Poll extends Component {
                                     name="group1"
                                     type="radio"
                                     value='optionOne'
+                                    checked= {this.state.text === 'optionOne'}
                                     onChange={this.handleChange}
                                 />
                                 <span className='text-black'>{optionOne.text}</span>
@@ -51,6 +57,7 @@ class Poll extends Component {
                                     name="group1"
                                     type="radio"
                                     value='optionTwo'
+                                    checked= {this.state.text === 'optionTwo'}
                                     onChange={this.handleChange}
                                 />
                                 <span>{this.props.optionTwo.text}</span>
@@ -76,10 +83,13 @@ class Poll extends Component {
 function mapStateToProps({ users, questions, authedUser }, props) {
     const author = users[authedUser].name;
     const question = questions[props.match.params.id];
+    
+    const selected = users[authedUser].answers[props.match.params.id];
 
     return {
         ...question,
-        author
+        author,
+        selected
     }
 }
 
