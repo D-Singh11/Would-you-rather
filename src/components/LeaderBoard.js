@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Leader from './Leader';
 
 class LeaderBoard extends Component {
     render() {
@@ -8,14 +9,13 @@ class LeaderBoard extends Component {
             <div>
                 <h1>LeaderBoard</h1>
                 <ul className="collection">
-                    <li className="collection-item">
-                        {this.props.leaders.map(leader => {
-                            return (
-                               <p>{leader.anme}</p>
-                            )
-                        })}
-
-                    </li>
+                    {this.props.leaders.map(leader => {
+                        return (
+                            <li className="collection-item" key={leader.name}>
+                                <Leader leader={leader} />
+                            </li>
+                        )
+                    })}
                 </ul>
             </div>
         )
