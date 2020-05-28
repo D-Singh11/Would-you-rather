@@ -25,6 +25,11 @@ class App extends React.Component {
 
             <div className="App container">
               <h1>Would you rather</h1>
+              <div className="chip">
+                <img src="https://tylermcginnis.com/would-you-rather/sarah.jpg" />
+                <span>Logged in as :  Jane Doe</span>
+              </div>
+              
               <Route exact path='/' component={Dashboard} />
               <Route path='/newQuestion' component={NewQuestion} />
               <Route path='/leaderboard' component={LeaderBoard} />
