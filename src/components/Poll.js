@@ -6,7 +6,8 @@ import { handleSaveAnswer } from '../actions/questions';
 class Poll extends Component {
 
     state = {
-        text: this.props.selected
+        text: this.props.selected,
+        details: this.props.selected
     }
 
 
@@ -17,10 +18,10 @@ class Poll extends Component {
             this.props.dispatch(handleSaveAnswer(this.props.id, this.state.text));
         }
         this.setState({
-            text: event.target.value
+            details: false
         });
 
-        this.props.history.push('/');
+        // this.props.history.push('/');
         // todo: above push to route doesnot update homepage data even though store was update
         // deal with it later and remove the temporary fix of calling componentDidMount in QuestionsList()
     }
@@ -33,6 +34,7 @@ class Poll extends Component {
     }
 
     render() {
+        console.log(this.props);
         const { author, optionOne, id } = this.props;
         return (
             <div className="card">
@@ -41,36 +43,40 @@ class Poll extends Component {
                         <img src={this.props.avatarURL} alt='avatar of user' className='circle' />
                         <p className='card-title'>{author} asks</p>
                     </div>
-                    <h5 className="header">Would you rather?</h5>
-                    <form onSubmit={this.handleSubmit}>
-                        <p>
-                            <label>
-                                <input className="with-gap"
-                                    name="group1"
-                                    type="radio"
-                                    value='optionOne'
-                                    checked={this.state.text === 'optionOne'}
-                                    onChange={this.handleChange}
-                                />
-                                <span className='text-black'>{optionOne.text}</span>
-                            </label>
-                        </p>
-                        <p>
-                            <label>
-                                <input className="with-gap"
-                                    name="group1"
-                                    type="radio"
-                                    value='optionTwo'
-                                    checked={this.state.text === 'optionTwo'}
-                                    onChange={this.handleChange}
-                                />
-                                <span>{this.props.optionTwo.text}</span>
-                            </label>
-                        </p>
-                        <button className='btn-large amber lighten-2'>
-                            Submit
-                        </button>
-                    </form>
+
+                    {this.state.details ===undefined ? (
+                        <form onSubmit={this.handleSubmit}>
+                        <h5 className="header">Would you rather?</h5>
+                            <p>
+                                <label>
+                                    <input className="with-gap"
+                                        name="group1"
+                                        type="radio"
+                                        value='optionOne'
+                                        checked={this.state.text === 'optionOne'}
+                                        onChange={this.handleChange}
+                                    />
+                                    <span className='text-black'>{optionOne.text}</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input className="with-gap"
+                                        name="group1"
+                                        type="radio"
+                                        value='optionTwo'
+                                        checked={this.state.text === 'optionTwo'}
+                                        onChange={this.handleChange}
+                                    />
+                                    <span>{this.props.optionTwo.text}</span>
+                                </label>
+                            </p>
+                            <button className='btn-large amber lighten-2'>
+                                Submit
+                            </button>
+                        </form>
+                    ): <p>Deatils</p>}
+                    
                 </div>
                 {/* <Link to={`/detail/${id}`} className='white-text'>
                     <div className='card-action amber lighten-2'>
