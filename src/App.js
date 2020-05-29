@@ -26,7 +26,7 @@ class App extends React.Component {
             <div className="App container">
               <h1>Would you rather</h1>
               <div className="chip">
-                <img src="https://tylermcginnis.com/would-you-rather/sarah.jpg" />
+                <img src="https://tylermcginnis.com/would-you-rather/sarah.jpg" alt="authed user"/>
                 <span>Logged in as :  Jane Doe</span>
               </div>
               

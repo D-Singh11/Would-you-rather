@@ -36,7 +36,7 @@ class Poll extends Component {
 
     render() {
         console.log(this.props);
-        const { authedUser, question } = this.props;
+        const { question } = this.props;
         
         return (
             <div className="card">
