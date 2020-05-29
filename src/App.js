@@ -33,7 +33,7 @@ class App extends React.Component {
               <Route exact path='/' component={Dashboard} />
               <Route path='/add' component={NewQuestion} />
               <Route path='/leaderboard' component={LeaderBoard} />
-              <Route path='/questions/:id' component={Poll} />
+              <Route path='/questions/:question_id' component={Poll} />
               <Route path='/detail/:id' component={PollDetail} />
               <Route path='/login' component={Login} />
             </div>
