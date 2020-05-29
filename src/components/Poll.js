@@ -76,7 +76,7 @@ class Poll extends Component {
                             </button>
                         </form>
                     ) 
-                    : <PollDetail question={question} selected={this.props.selected}/>
+                    : <PollDetail question={question} selected={this.state.text}/>
                     }
 
                 </div>
