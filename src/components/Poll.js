@@ -20,7 +20,7 @@ class Poll extends Component {
                 details: false
             });
         }
-        
+
         // this.props.history.push('/');
         // todo: above push to route doesnot update homepage data even though store was update
         // deal with it later and remove the temporary fix of calling componentDidMount in QuestionsList()
@@ -36,6 +36,9 @@ class Poll extends Component {
     render() {
         console.log(this.props);
         const { authedUser, question } = this.props;
+        const optioneOneVotes = question.optionOne.votes.length;
+        const optioneTwoVotes = question.optionTwo.votes.length;
+        const totalVotes = optioneOneVotes + optioneTwoVotes;
         return (
             <div className="card">
                 <div className="card-content center">
@@ -44,9 +47,9 @@ class Poll extends Component {
                         <p className='card-title'>{question.authorName} asks</p>
                     </div>
 
-                    {this.state.details ===undefined ? (
+                    {this.state.details === undefined ? (
                         <form onSubmit={this.handleSubmit}>
-                        <h5 className="header">Would you rather?</h5>
+                            <h5 className="header">Would you rather?</h5>
                             <p>
                                 <label>
                                     <input className="with-gap"
@@ -75,8 +78,27 @@ class Poll extends Component {
                                 Submit
                             </button>
                         </form>
-                    ): <p>Deatils</p>}
-                    
+                    ) : (
+                            <div>
+
+                                <h4>Poll Deatils</h4>
+                                <h5 className="header">Would you rather?</h5>
+
+                                <div className='card' className={this.props.selected === 'optionOne' ? 'red' : ''}>
+                                    <p>{question.optionOne.text}</p>
+                                    <p>{optioneOneVotes} out of {totalVotes}</p>
+                                    <span>{Math.ceil(optioneTwoVotes * (100/totalVotes))} % votes</span>
+                                </div>
+
+                                <div className='card' className={this.props.selected === 'optionTwo' ? 'red' : ''}>
+                                    <p>{question.optionTwo.text}</p>
+                                    <p>{optioneTwoVotes} out of {totalVotes}</p>
+                                    <span>{Math.floor(optioneOneVotes * (100/totalVotes))} % votes</span>
+                                </div>
+                            </div>
+                        )
+                    }
+
                 </div>
                 {/* <Link to={`/detail/${id}`} className='white-text'>
                     <div className='card-action amber lighten-2'>
@@ -99,7 +121,7 @@ function mapStateToProps({ users, questions, authedUser }, props) {
     return {
         authedUser,
         selected,
-        question:{
+        question: {
             ...question,
             authorName,
             avatarURL
