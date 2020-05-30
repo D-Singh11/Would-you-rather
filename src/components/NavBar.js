@@ -22,8 +22,9 @@ class Nav extends Component {
                         </NavLink>
                     </li>
                     <li className='right'>
-                        <NavLink to='/login' activeClassName='active'>
-                            Login
+                        <NavLink to='/' activeClassName='active'
+                            onClick={this.props.handleLogOut}>
+                            LogOut
                         </NavLink>
                     </li>
                 </ul>

@@ -31,17 +31,14 @@ class App extends React.Component {
             ? <Login />
             :
             <div>
-              <NavBar />
+              <NavBar handleLogOut={this.handleLogOut}/>
               <div className="App container">
                 <h1>Would you rather</h1>
                 <div className="chip">
                   <img src={this.props.avatarURL} alt="authed user" />
                   <span>Logged in as : {this.props.authedUser}</span>
                 </div>
-                <button className="chip right btn"
-                  onClick={this.handleLogOut}>LogOut
-                  <img src={this.props.avatarURL} alt=""/>
-                </button>
+               
 
                 <Switch>
                   <Route exact path='/' component={Dashboard} />
