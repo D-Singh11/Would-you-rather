@@ -16,6 +16,11 @@ class App extends React.Component {
   componentDidMount() {
     this.props.dispatch(handleInitialData());
   }
+
+  handleLogOut = () => {
+    this.props.dispatch(setAuthedUserAction(null));
+  }
+
   render() {
     return (
       <div>
@@ -32,6 +37,10 @@ class App extends React.Component {
                   <img src="https://tylermcginnis.com/would-you-rather/sarah.jpg" alt="authed user"/>
                   <span>Logged in as :  Jane Doe</span>
                 </div>
+                <button className="chip right btn"
+                  onClick={this.handleLogOut}>LogOut
+                  <img src={this.props.avatarURL} alt=""/>
+                </button>
 
                 <Route exact path='/' component={Dashboard} />
                 <Route path='/add' component={NewQuestion} />
@@ -48,7 +57,7 @@ class App extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    authedUser: state.authedUser         // if autheduser is null that means data from API has not been assigned to store yet.
+    authedUser: state.authedUser,        // if autheduser is null that means data from API has not been assigned to store yet.
   }
 }
 
