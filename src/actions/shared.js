@@ -1,6 +1,5 @@
 import { setUsersAction } from './users';
 import { setQuestionsAction } from './questions';
-import { setAuthedUserAction } from './authedUser';
 import { getInitialData } from '../utils/api';
 import { showLoading, hideLoading } from 'react-redux-loading';
 

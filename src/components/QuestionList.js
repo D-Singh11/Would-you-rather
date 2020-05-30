@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import Question from './Question';
 import { connect } from 'react-redux';
-import { handleInitialData } from '../actions/shared';
 
 
 class QuestionList extends Component {
-    // componentDidMount() {
-    //     this.props.dispatch(handleInitialData());
-    //   }
     render() {
         console.log(this.props);
         return (

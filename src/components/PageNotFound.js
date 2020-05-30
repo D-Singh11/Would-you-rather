@@ -11,7 +11,7 @@ class PageNotFound extends Component {
                         <Link to='/' className='btn'>Go back</Link>
                     </div>
                     <div class="card-image">
-                        <img src="https://media.giphy.com/media/UoeaPqYrimha6rdTFV/giphy.gif" />
+                        <img src="https://media.giphy.com/media/UoeaPqYrimha6rdTFV/giphy.gif" alt='page not found'/>
                     </div>
                     <div class="card-content">
                         <span>Page you tried to access does not exist. It could be because of incorrect URL</span>
