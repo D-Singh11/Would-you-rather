@@ -4,7 +4,7 @@ import { setAuthedUserAction } from './authedUser';
 import { getInitialData } from '../utils/api';
 import { showLoading, hideLoading } from 'react-redux-loading';
 
-const AUTHED_ID = 'sarahedo';             // todo: replace with authentication
+// const AUTHED_ID = null;             // todo: replace with authentication
 
 export function handleInitialData() {
     return (dispatch) => {
@@ -13,7 +13,7 @@ export function handleInitialData() {
             const { users, questions } = data;
             dispatch(setUsersAction(users));
             dispatch(setQuestionsAction(questions));
-            dispatch(setAuthedUserAction(AUTHED_ID));
+            // dispatch(setAuthedUserAction(AUTHED_ID));
             dispatch(hideLoading());
         })
     }
