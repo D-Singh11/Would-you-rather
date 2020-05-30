@@ -34,8 +34,8 @@ class App extends React.Component {
               <div className="App container">
                 <h1>Would you rather</h1>
                 <div className="chip">
-                  <img src="https://tylermcginnis.com/would-you-rather/sarah.jpg" alt="authed user"/>
-                  <span>Logged in as :  Jane Doe</span>
+                  <img src={this.props.avatarURL} alt="authed user" />
+                  <span>Logged in as : {this.props.authedUser}</span>
                 </div>
                 <button className="chip right btn"
                   onClick={this.handleLogOut}>LogOut
@@ -58,6 +58,7 @@ class App extends React.Component {
 function mapStateToProps(state) {
   return {
     authedUser: state.authedUser,        // if autheduser is null that means data from API has not been assigned to store yet.
+    avatarURL : state.authedUser ? state.users[state.authedUser].avatarURL : null
   }
 }
 
