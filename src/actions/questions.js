@@ -49,8 +49,8 @@ export function handleAddQuestion(question) {
     return (dispatch) => {
 
         dispatch(showLoading());
-        return saveQuestion(question).then(question => {
-            dispatch(addQuestionAction(question));
+        return saveQuestion(question).then(savedQuestion => {
+            dispatch(addQuestionAction(savedQuestion));
             dispatch(hideLoading());
         })
     }
