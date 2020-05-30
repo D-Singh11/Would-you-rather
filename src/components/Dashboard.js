@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import QuestionList from './QuestionList';
 
 class Dashboard extends Component {
+    componentDidMount(){
+        const elems = document.querySelectorAll('.tabs');
+        window.M.Tabs.init(elems);  
+    }
+    
     render() {
         return (
             <div>
