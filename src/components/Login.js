@@ -17,7 +17,7 @@ class Login extends Component {
 
     render() {
         return (
-            <div className='row'>
+            <div className='row container'>
                 <h1>Login page</h1>
                 <div className="col s6">
                     <label className='text-blue'>Login as :</label>
