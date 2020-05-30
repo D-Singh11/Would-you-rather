@@ -3,11 +3,12 @@ import { handleInitialData } from './actions/shared';
 import { connect } from 'react-redux';
 import NavBar from './components/NavBar';
 import Dashboard from './components/Dashboard';
-import { Route, Redirect, Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import NewQuestion from './components/NewQuestion';
 import LeaderBoard from './components/LeaderBoard';
 import Poll from './components/Poll';
 import PollDetail from './components/PollDetail';
+import PageNotFound from './components/PageNotFound';
 import Login from './components/Login';
 import LoadingBar from 'react-redux-loading';
 import { setAuthedUserAction } from './actions/authedUser';
@@ -42,11 +43,14 @@ class App extends React.Component {
                   <img src={this.props.avatarURL} alt=""/>
                 </button>
 
-                <Route exact path='/' component={Dashboard} />
-                <Route path='/add' component={NewQuestion} />
-                <Route path='/leaderboard' component={LeaderBoard} />
-                <Route path='/questions/:question_id' component={Poll} />
-                <Route path='/detail/:id' component={PollDetail} />
+                <Switch>
+                  <Route exact path='/' component={Dashboard} />
+                  <Route path='/add' component={NewQuestion} />
+                  <Route path='/leaderboard' component={LeaderBoard} />
+                  <Route path='/questions/:question_id' component={Poll} />
+                  <Route path='/detail/:id' component={PollDetail} />
+                  <Route  component={PageNotFound} />
+                </Switch>
               </div>
             </div>
         }
