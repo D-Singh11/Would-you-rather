@@ -8,7 +8,7 @@ class Question extends Component {
         const { author, optionOne, id } = this.props;    
         return (
             <div className="col s12 m7">
-                <div className="card horizontal">
+                <div className="card horizontal card-panel hoverable">
                     <div className="card-image">
                         <img src={this.props.avatarURL} alt='avatar of user' />
                         <span className='card-title'>{author}</span>

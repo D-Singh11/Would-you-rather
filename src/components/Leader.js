@@ -3,17 +3,18 @@ import React from 'react'
 const Leader = ({ leader }) => {
     return (
         <div>
-            <div className='row blue-grey lighten-5'>
+            <div className='row'>
                 <div className='col s6 offset-s3'>
-                    <div className="card center">
+                    <div className="card card-panel hoverable center">
                         <div className="card-image">
                             <img src={leader.avatarURL} alt="leader avatar" />
-                            <span className="title">{leader.name}</span>
+                            <span className="flow-text">{leader.name}</span>
                         </div>
                         <div className='card-content'>
-                            <p>Questions posted : {leader.questions}</p>
-                            <p>Answered : {leader.answers}</p>
-                            <span>Score : {leader.answers + leader.questions}</span>
+                            <p className=''>Questions posted : {leader.questions}</p>
+                            <p className=''>Answered : {leader.answers}</p>
+                            <p className=''>Score : {leader.answers + leader.questions}</p>
+                            {/* <i class="material-icons amber">stars</i> */}
                         </div>
                     </div>
                 </div>
