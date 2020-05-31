@@ -14,10 +14,21 @@ import LoadingBar from 'react-redux-loading';
 import { setAuthedUserAction } from './actions/authedUser';
 
 class App extends React.Component {
+
+  /**
+* @description Lidecycle hook called when DOM is rendered
+* It is used to dispatch() a thubked action handleInitialData() which reterieve initiak data
+* from API and save it to redux store
+*/
   componentDidMount() {
     this.props.dispatch(handleInitialData());
   }
 
+
+  /**
+* @description This event handler is invoked when users clicks on the Logout button
+* It is used to sign out current user. It dispatches an action to store to set the current logged in user to null
+*/
   handleLogOut = () => {
     this.props.dispatch(setAuthedUserAction(null));
   }
@@ -56,11 +67,26 @@ class App extends React.Component {
   }
 }
 
+/**
+* @description This function is used to specify what state is needed in the component from
+redux store. It is then passed as parameter to connect function. It is executed
+in the the body of connect() provided by 'react-redux' library.
+@param {Object} state
+@returns {object} User details
+*/
 function mapStateToProps(state) {
   return {
-    authedUser: state.authedUser,        // if autheduser is null that means data from API has not been assigned to store yet.
+    authedUser: state.authedUser,                                   // if autheduser is null that means data from API has not been assigned to store yet.
     avatarURL: state.authedUser ? state.users[state.authedUser].avatarURL : null
   }
 }
 
+
+/**
+* @description connect() used to connect Poll Component to store and request
+state from it.
+@param {function} mapStateToProps
+@param {Component} App
+@returns {Component} ConnectedComponent
+*/
 export default connect(mapStateToProps)(App);
