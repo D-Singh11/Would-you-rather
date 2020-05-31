@@ -14,10 +14,10 @@ class NewQuestion extends Component {
                 author: this.props.authedUser
             }));
             this.props.history.push('/');
-            // todo: above push to route doesnot update homepage data even though store was update
-            // deal with it later and remove the temporary fix of calling componentDidMount in QuestionsList()
         }
-        alert("Provide both options to save new question");
+        else {
+            alert("Provide both options to save new question");
+        }
     }
 
     render() {

@@ -11,12 +11,9 @@ class LeaderBoard extends Component {
                 <ul className="collection">
                     {this.props.leaders.map(leader => {
                         return (
-                            <div>
-
-                                <li className="collection-item" key={leader.name}>
-                                    <Leader leader={leader} />
-                                </li>
-                            </div>
+                            <li className="collection-item" key={leader.name}>
+                                <Leader leader={leader} />
+                            </li>
                         )
                     })}
                 </ul>

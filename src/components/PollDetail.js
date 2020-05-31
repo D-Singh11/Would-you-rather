@@ -13,7 +13,7 @@ class PollDetail extends Component {
                 <h4>Poll Deatils</h4>
                 <h5 className="header">Would you rather?</h5>
                 <div className='col s6'>
-                    <div className='card z-depth-5'>
+                    <div className='card z-depth-5 hoverable'>
                         <span className={`btn-floating waves-effect waves-light red ${this.props.selected === 'optionOne' ? 'green' : 'red'}`}>
                             {this.props.selected === 'optionOne' ? 'You' : 'Other'}
                     </span>
@@ -25,7 +25,7 @@ class PollDetail extends Component {
                 </div>
 
                 <div className='col s6'>
-                    <div className='card z-depth-5'>
+                    <div className='card z-depth-5 hoverable'>
                         <span className={`btn-floating waves-effect waves-light red ${this.props.selected === 'optionTwo' ? 'green' : 'red'}`}>
                         {this.props.selected === 'optionTwo' ? 'You' : 'Other'}
                             </span>
