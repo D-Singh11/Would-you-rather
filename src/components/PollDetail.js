@@ -15,7 +15,7 @@ class PollDetail extends Component {
                 <div className='col s6'>
                     <div className='card z-depth-5'>
                         <span className={`btn-floating waves-effect waves-light red ${this.props.selected === 'optionOne' ? 'green' : 'red'}`}>
-                            You
+                            {this.props.selected === 'optionOne' ? 'You' : 'Other'}
                     </span>
                         <p className='flow-text'>{question.optionOne.text}</p>
                         <p>votes : {optioneOneVotes} out of {totalVotes}</p>
@@ -27,7 +27,8 @@ class PollDetail extends Component {
                 <div className='col s6'>
                     <div className='card z-depth-5'>
                         <span className={`btn-floating waves-effect waves-light red ${this.props.selected === 'optionTwo' ? 'green' : 'red'}`}>
-                            Other</span>
+                        {this.props.selected === 'optionTwo' ? 'You' : 'Other'}
+                            </span>
                         <p className='flow-text'>{question.optionTwo.text}</p>
                         <p>votes : {optioneTwoVotes} out of {totalVotes}</p>
                         <span>{Math.floor(optioneTwoVotes * (100 / totalVotes))} % people voted for this option</span>

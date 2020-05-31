@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-
-
 import { setAuthedUserAction } from '../actions/authedUser';
 
 class Login extends Component {
@@ -9,16 +7,14 @@ class Login extends Component {
     handleChange = (event) => {
         event.preventDefault();
         console.log(event.target.value);
-        // this.props.dispatch(handleInitialData());
         this.props.dispatch(setAuthedUserAction(event.target.value));
-        // this.props.history.push('/');
     }
 
     render() {
         return (
             <div className='row container'>
                 <h1>Login page</h1>
-                <div className="col s6">
+                <div className=" card small col s6 offset-s3">
                     <label className='text-blue'>Login as :</label>
                     <select onChange={this.handleChange} className='browser-default'>
                         <option value="" defaultValue>Choose your username</option>
