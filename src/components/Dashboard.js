@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import QuestionList from './QuestionList';
 
 class Dashboard extends Component {
-    componentDidMount(){
+    componentDidMount() {
         const elems = document.querySelectorAll('.tabs');
-        window.M.Tabs.init(elems);  
+        window.M.Tabs.init(elems);
     }
-    
+
     render() {
         return (
             <div>
@@ -27,7 +27,7 @@ class Dashboard extends Component {
                         </div>
                         <div id="answered">
                             <h2>Answered questions</h2>
-                            <QuestionList type={'answered'}/>
+                            <QuestionList type={'answered'} />
                         </div>
                     </div>
                 </div>

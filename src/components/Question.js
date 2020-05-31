@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 class Question extends Component {
     render() {
-        const { author, optionOne, id } = this.props;    
+        const { author, optionOne, id } = this.props;
         return (
             <div className="col s12 m7">
                 <div className="card horizontal card-panel hoverable">

@@ -11,7 +11,7 @@ class QuestionList extends Component {
                 {this.props.qIds.map(id => {
                     return (
                         <li className="collection-item" key={id}>
-                            < Question id={id} type={this.props.type}/>
+                            < Question id={id} type={this.props.type} />
                         </li>
                     )
                 })}

@@ -21,10 +21,6 @@ class Poll extends Component {
                 details: false
             });
         }
-
-        // this.props.history.push('/');
-        // todo: above push to route doesnot update homepage data even though store was update
-        // deal with it later and remove the temporary fix of calling componentDidMount in QuestionsList()
     }
 
     handleChange = (event) => {
@@ -37,7 +33,7 @@ class Poll extends Component {
     render() {
         console.log(this.props);
         const { question } = this.props;
-        
+
         return (
             <div className="card">
                 <div className="card-content center">
@@ -75,8 +71,8 @@ class Poll extends Component {
                                 Submit
                             </button>
                         </form>
-                    ) 
-                    : <PollDetail question={question} selected={this.state.text}/>
+                    )
+                        : <PollDetail question={question} selected={this.state.text} />
                     }
 
                 </div>

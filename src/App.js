@@ -31,14 +31,14 @@ class App extends React.Component {
             ? <Login />
             :
             <div>
-              <NavBar handleLogOut={this.handleLogOut}/>
+              <NavBar handleLogOut={this.handleLogOut} />
               <div className="App container">
                 <h1>Would you rather</h1>
                 <div className="chip">
                   <img src={this.props.avatarURL} alt="authed user" />
                   <span>Logged in as : {this.props.authedUser}</span>
                 </div>
-               
+
 
                 <Switch>
                   <Route exact path='/' component={Dashboard} />
@@ -46,7 +46,7 @@ class App extends React.Component {
                   <Route path='/leaderboard' component={LeaderBoard} />
                   <Route path='/questions/:question_id' component={Poll} />
                   <Route path='/detail/:id' component={PollDetail} />
-                  <Route  component={PageNotFound} />
+                  <Route component={PageNotFound} />
                 </Switch>
               </div>
             </div>
@@ -59,7 +59,7 @@ class App extends React.Component {
 function mapStateToProps(state) {
   return {
     authedUser: state.authedUser,        // if autheduser is null that means data from API has not been assigned to store yet.
-    avatarURL : state.authedUser ? state.users[state.authedUser].avatarURL : null
+    avatarURL: state.authedUser ? state.users[state.authedUser].avatarURL : null
   }
 }
 

@@ -6,11 +6,11 @@ import {
 } from '../utils/_DATA';
 
 
-export function getInitialData(){
+export function getInitialData() {
     return Promise.all([
         _getUsers(),
         _getQuestions()
-    ]).then(([users, questions])=>{
+    ]).then(([users, questions]) => {
         return {
             users,
             questions
