@@ -12,27 +12,27 @@ class PollDetail extends Component {
         const totalVotes = optioneOneVotes + optioneTwoVotes;
 
         return (
-            <div className='row'>
+            <div className="row">
                 <h4>Poll Deatils</h4>
                 <h5 className="header">Would you rather?</h5>
-                <div className='col s6'>
-                    <div className='card z-depth-5 hoverable'>
+                <div className="col s6">
+                    <div className="card z-depth-5 hoverable">
                         <span className={`btn-floating waves-effect waves-light red ${this.props.selected === 'optionOne' ? 'green' : 'red'}`}>
                             {this.props.selected === 'optionOne' ? 'You' : 'Other'}
                         </span>
-                        <p className='flow-text'>{question.optionOne.text}</p>
+                        <p className="flow-text">{question.optionOne.text}</p>
                         <p>votes : {optioneOneVotes} out of {totalVotes}</p>
                         <span>{Math.ceil(optioneOneVotes * (100 / totalVotes))} % people voted for this option</span>
 
                     </div>
                 </div>
 
-                <div className='col s6'>
-                    <div className='card z-depth-5 hoverable'>
+                <div className="col s6">
+                    <div className="card z-depth-5 hoverable">
                         <span className={`btn-floating waves-effect waves-light red ${this.props.selected === 'optionTwo' ? 'green' : 'red'}`}>
                             {this.props.selected === 'optionTwo' ? 'You' : 'Other'}
                         </span>
-                        <p className='flow-text'>{question.optionTwo.text}</p>
+                        <p className="flow-text">{question.optionTwo.text}</p>
                         <p>votes : {optioneTwoVotes} out of {totalVotes}</p>
                         <span>{Math.floor(optioneTwoVotes * (100 / totalVotes))} % people voted for this option</span>
                     </div>

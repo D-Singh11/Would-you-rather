@@ -54,9 +54,9 @@ class Poll extends Component {
         return (
             <div className="card">
                 <div className="card-content center">
-                    <div className='center'>
-                        <img src={question.avatarURL} alt='avatar of user' className='circle' />
-                        <p className='card-title'>{question.authorName} asks</p>
+                    <div className="center">
+                        <img src={question.avatarURL} alt="avatar of user" className="circle" />
+                        <p className="card-title">{question.authorName} asks</p>
                     </div>
 
                     {this.state.details === undefined ? (
@@ -67,7 +67,7 @@ class Poll extends Component {
                                     <input className="with-gap"
                                         name="group1"
                                         type="radio"
-                                        value='optionOne'
+                                        value="optionOne"
                                         onChange={this.handleChange}
                                     />
                                     <span>{question.optionOne.text}</span>
@@ -78,13 +78,13 @@ class Poll extends Component {
                                     <input className="with-gap"
                                         name="group1"
                                         type="radio"
-                                        value='optionTwo'
+                                        value="optionTwo"
                                         onChange={this.handleChange}
                                     />
                                     <span>{question.optionTwo.text}</span>
                                 </label>
                             </p>
-                            <button className='btn-large amber lighten-2'>
+                            <button className="btn-large amber lighten-2">
                                 Submit
                             </button>
                         </form>

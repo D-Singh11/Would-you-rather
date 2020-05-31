@@ -24,7 +24,7 @@ class Login extends Component {
         return (
             <div className='row container'>
                 <h1>Login page</h1>
-                <div className=" card small col s6 offset-s3">
+                <div className="card small col s6 offset-s3">
                     <label className='text-blue'>Login as :</label>
                     <select onChange={this.handleChange} className='browser-default'>
                         <option value="" defaultValue>Choose your username</option>

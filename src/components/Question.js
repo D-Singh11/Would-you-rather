@@ -14,17 +14,17 @@ class Question extends Component {
             <div className="col s12 m7">
                 <div className="card horizontal card-panel hoverable">
                     <div className="card-image">
-                        <img src={this.props.avatarURL} alt='avatar of user' />
-                        <span className='card-title'>{author}</span>
+                        <img src={this.props.avatarURL} alt="avatar of user" />
+                        <span className="card-title">{author}</span>
                     </div>
                     <div className="card-stacked">
                         <div className="card-content center">
                             <h3 className=" blue-grey-text">Would you rather?</h3>
-                            <span className=' '>{optionOne.text}  <br /> OR ..</span>
+                            <span>{optionOne.text}  <br /> OR ..</span>
                         </div>
-                        <Link to={`/questions/${id}`} className='white-text'>
-                            <div className='card-action amber lighten-2'>
-                                <p className='center '>
+                        <Link to={`/questions/${id}`} className="white-text">
+                            <div className="card-action amber lighten-2">
+                                <p className="center ">
                                     <b>{this.props.type === 'unanswered' ? 'Poll' : 'See details'}</b>
                                 </p>
                             </div>

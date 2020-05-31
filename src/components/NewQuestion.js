@@ -35,21 +35,21 @@ class NewQuestion extends Component {
     */
     render() {
         return (
-            <div className='newQuestion row center'>
+            <div className="newQuestion row center">
                 <h3>Would you rather?</h3>
-                <form onSubmit={this.handleSubmit} className=' col s6 offset-s3'>
+                <form onSubmit={this.handleSubmit} className="col s6 offset-s3">
                     <label htmlFor="optionOne">Option one</label>
                     <input type="text"
-                        placeholder='add first option'
+                        placeholder="add first option"
                         ref={(optionOne) => this.optionOne = optionOne}
                     />
 
                     <label htmlFor="optionTwo">Option two</label>
                     <input type="text"
-                        placeholder='add second option '
+                        placeholder="add second option"
                         ref={(optionTwo) => this.optionTwo = optionTwo}
                     />
-                    <button type="submit" className='btn-large amber center'>
+                    <button type="submit" className="btn-large amber center">
                         Save
                         </button>
                 </form>

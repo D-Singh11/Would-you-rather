@@ -36,7 +36,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <LoadingBar style={{ backgroundColor: 'yellow', height: '5px' }} />
+        <LoadingBar style={{ backgroundColor: "yellow", height: "5px" }} />
         {
           this.props.authedUser === null
             ? <Login />
@@ -52,11 +52,11 @@ class App extends React.Component {
 
 
                 <Switch>
-                  <Route exact path='/' component={Dashboard} />
-                  <Route path='/add' component={NewQuestion} />
-                  <Route path='/leaderboard' component={LeaderBoard} />
-                  <Route path='/questions/:question_id' component={Poll} />
-                  <Route path='/detail/:id' component={PollDetail} />
+                  <Route exact path="/" component={Dashboard} />
+                  <Route path="/add" component={NewQuestion} />
+                  <Route path="/leaderboard" component={LeaderBoard} />
+                  <Route path="/questions/:question_id" component={Poll} />
+                  <Route path="/detail/:id" component={PollDetail} />
                   <Route component={PageNotFound} />
                 </Switch>
               </div>

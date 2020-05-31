@@ -4,25 +4,25 @@ import { NavLink } from 'react-router-dom';
 class Nav extends Component {
     render() {
         return (
-            <nav className='nav'>
+            <nav className="nav">
                 <ul>
                     <li>
-                        <NavLink to='/' exact activeClassName='active'>
+                        <NavLink to="/" exact activeClassName="active">
                             Homepage
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/add' activeClassName='active'>
+                        <NavLink to="/add" activeClassName="active">
                             Add question
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/leaderboard' activeClassName='active'>
+                        <NavLink to="/leaderboard" activeClassName="active">
                             Leaderboard
                         </NavLink>
                     </li>
-                    <li className='right'>
-                        <NavLink to='/' activeClassName='active'
+                    <li className="right">
+                        <NavLink to="/" activeClassName="active"
                             onClick={this.props.handleLogOut}>
                             LogOut
                         </NavLink>
