@@ -3,8 +3,13 @@ import { setQuestionsAction } from './questions';
 import { getInitialData } from '../utils/api';
 import { showLoading, hideLoading } from 'react-redux-loading';
 
-// const AUTHED_ID = null;             // todo: replace with authentication
 
+/**
+* @description Thunked Action creator used to make asynchornous API 
+* call to get initial data from database needed to set initial state of redux store.
+* Dispatch actions used to upadte users and questions state in store.
+* @returns {function}
+*/
 export function handleInitialData() {
     return (dispatch) => {
         dispatch(showLoading());
@@ -12,7 +17,6 @@ export function handleInitialData() {
             const { users, questions } = data;
             dispatch(setUsersAction(users));
             dispatch(setQuestionsAction(questions));
-            // dispatch(setAuthedUserAction(AUTHED_ID));
             dispatch(hideLoading());
         })
     }
