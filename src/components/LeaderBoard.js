@@ -22,7 +22,15 @@ class LeaderBoard extends Component {
     }
 }
 
-export default connect((state => {
+
+/**
+* @description This function is used to specify what state is needed in the component from
+redux store. It is then passed as parameter to connect function. It is executed
+in the the body of connect() provided by 'react-redux' library.
+@param {Object} state
+@returns {array} leaders
+*/
+function mapStaeToProps(state) {
     const userKeys = Object.keys(state.users);
     const leaders = userKeys.map(id => {
         const userQuesIds = state.users[id].questions;
@@ -38,4 +46,13 @@ export default connect((state => {
     return {
         leaders: leaders.sort((a, b) => b.total - a.total)
     }
-}))(LeaderBoard);
+}
+
+/**
+* @description connect() used to connect Poll Component to store and request
+state from it.
+@param {function} mapStateToProps
+@param {Component} LeaderBoard
+@returns {Component} ConnectedComponent
+*/
+export default connect(mapStaeToProps)(LeaderBoard);
