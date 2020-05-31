@@ -19,7 +19,7 @@ class Question extends Component {
                             <span className=' '>{optionOne.text}  <br /> OR ..</span>
                         </div>
                         <Link to={`/questions/${id}`} className='white-text'>
-                            <div className='card-action red lighten-2'>
+                            <div className='card-action amber lighten-2'>
                                 <p className='center '>
                                     <b>{this.props.type === 'unanswered' ? 'Poll' : 'See details'}</b>
                                 </p>

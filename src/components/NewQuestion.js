@@ -22,9 +22,9 @@ class NewQuestion extends Component {
 
     render() {
         return (
-            <div className='newQuestion'>
-                <h1>Add new question</h1>
-                <form onSubmit={this.handleSubmit} className='center'>
+            <div className='newQuestion row center'>
+                <h3>Would you rather?</h3>
+                <form onSubmit={this.handleSubmit} className=' col s6 offset-s3'>
                     <label htmlFor="optionOne">Option one</label>
                     <input type="text"
                         placeholder='add first option'
