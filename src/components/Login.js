@@ -4,12 +4,22 @@ import { setAuthedUserAction } from '../actions/authedUser';
 
 class Login extends Component {
 
+    /**
+   * @description Function is called when user selects the user name
+   * from the provided list of usernames to login to application.
+   * Internally calls dispatch() function of redux store with setAuthedUserAction
+   * action to log in as selected user.
+   * @param {event} event
+   */
     handleChange = (event) => {
         event.preventDefault();
         console.log(event.target.value);
         this.props.dispatch(setAuthedUserAction(event.target.value));
     }
 
+    /**
+    * @description Renders the Login component to DOM 
+    */
     render() {
         return (
             <div className='row container'>
@@ -40,4 +50,10 @@ class Login extends Component {
     }
 }
 
+/**
+* @description connect() used to connect Login component to store and to use
+its dispatch()
+@param {Component} Login
+@returns {Component} ConnectedComponent
+*/
 export default connect()(Login);

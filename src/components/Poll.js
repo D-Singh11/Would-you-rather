@@ -11,7 +11,14 @@ class Poll extends Component {
         details: this.props.selected
     }
 
-
+    /**
+    * @description It is used to save answer of an unanswered question to the backend 
+    * and into the redux store. It reads the user selection from the form and
+    * calls dispatch() of redux store which uses thunked action creator
+    * handleSaveAnswer() to update state of store and backend database.
+    * @param {event} event
+    * @returns {array} books
+    */
     handleSubmit = (event) => {
         event.preventDefault();
         if (this.state.text && this.props.question.id) {
@@ -23,6 +30,13 @@ class Poll extends Component {
         }
     }
 
+    /**
+     * @description Updates the local state of the component by
+     * getting of the user' radio button selection
+     * Sets the text property of Controlled Component's state object
+     * @param {object} book
+     * @param {string} shelf 
+     */
     handleChange = (event) => {
         this.setState({
             text: event.target.value
@@ -30,6 +44,9 @@ class Poll extends Component {
         console.log(event.target.value);
     }
 
+    /**
+    * @description Renders the Poll component to DOM 
+    */
     render() {
         console.log(this.props);
         const { question } = this.props;
@@ -88,6 +105,14 @@ class Poll extends Component {
     }
 }
 
+/**
+* @description This function is used to specify what state is needed in the component from
+redux store. It is then passed as parameter to connect function. It is executed
+in the the body of connect() provided by 'react-redux' library.
+@param {Object} users
+@param {Object} questions
+@returns {object} question details
+*/
 function mapStateToProps({ users, questions, authedUser }, props) {
     const question = questions[props.match.params.question_id];
     const avatarURL = users[question.author].avatarURL;
@@ -106,4 +131,11 @@ function mapStateToProps({ users, questions, authedUser }, props) {
     }
 }
 
+/**
+* @description connect() used to connect Poll Component to store and request
+state from it.
+@param {function} mapStateToProps
+@param {Component} Poll
+@returns {Component} ConnectedComponent
+*/
 export default connect(mapStateToProps)(Poll);

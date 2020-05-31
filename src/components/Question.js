@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom'
 
 
 class Question extends Component {
+
+    /**
+    * @description Renders the Poll component to DOM 
+    */
     render() {
         const { author, optionOne, id } = this.props;
         return (
@@ -32,6 +36,16 @@ class Question extends Component {
     }
 }
 
+/**
+* @description This function is used to specify what state is needed in the component from
+redux store. It is then passed as parameter to connect function. It is executed
+in the the body of connect() provided by 'react-redux' library.
+@param {Object} users
+@param {Object} questions
+@param {string} authedUser
+@param {object} props
+@returns {object} question details
+*/
 function mapStateToProps({ users, questions, authedUser }, props) {
     const question = questions[props.id];
     const author = questions[props.id].author;
@@ -44,4 +58,11 @@ function mapStateToProps({ users, questions, authedUser }, props) {
     }
 }
 
+/**
+* @description connect() used to connect Question Component to store and request
+state from it.
+@param {function} mapStateToProps
+@param {Component} Question
+@returns {Component} ConnectedComponent
+*/
 export default connect(mapStateToProps)(Question);

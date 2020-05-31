@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 
 class PollDetail extends Component {
+
+/**
+* @description Renders the PollDetail component to DOM 
+*/
     render() {
         const { question } = this.props;
         const optioneOneVotes = question.optionOne.votes.length;
         const optioneTwoVotes = question.optionTwo.votes.length;
         const totalVotes = optioneOneVotes + optioneTwoVotes;
-        const myAnswer = this.props.selected === 'optionTwo' ? 'red' : 'green'
 
         return (
             <div className='row'>

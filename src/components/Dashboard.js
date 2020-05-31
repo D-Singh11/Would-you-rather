@@ -2,11 +2,19 @@ import React, { Component } from 'react';
 import QuestionList from './QuestionList';
 
 class Dashboard extends Component {
+
+    /**
+    * @description Lidecycle hook called when DOM is rendered
+    * It initialize the materialize css's Tab behaviour
+    */
     componentDidMount() {
         const elems = document.querySelectorAll('.tabs');
         window.M.Tabs.init(elems);
     }
 
+    /**
+    * @description Renders the DashBoard component to DOM 
+    */
     render() {
         return (
             <div>

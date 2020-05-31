@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 
 class PageNotFound extends Component {
+
+    /**
+    * @description Renders the PageNotFound component to DOM
+    */
     render() {
         return (
             <div className="container">

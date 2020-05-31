@@ -4,6 +4,16 @@ import { connect } from 'react-redux';
 
 class NewQuestion extends Component {
 
+    /**
+    * @description It is used to add a new question to the backend 
+    * and into the redux store. It reads the user unputs from the form and
+    * calls dispatch() of redux store which uses thunked action creator
+    * handleAddQuestion() to update state of store and backend database.
+    * This event handler also redirects user to home route using history object of route.
+    * @param {event} event
+    * @returns {array} books
+    */
+
     handleSubmit = (event) => {
         event.preventDefault();
 
@@ -20,6 +30,9 @@ class NewQuestion extends Component {
         }
     }
 
+    /**
+    * @description Renders the NewQuestion component to DOM
+    */
     render() {
         return (
             <div className='newQuestion row center'>
@@ -45,6 +58,13 @@ class NewQuestion extends Component {
     }
 }
 
+/**
+* @description connect() used to connect NewQuestionComponent to store and request
+state from it.
+@param {function} arrow function
+@param {Component} NewQuestion
+@returns {Component} ConnectedComponent
+*/
 export default connect((state => {
     return {
         authedUser: state.authedUser
