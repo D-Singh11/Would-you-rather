@@ -31,7 +31,7 @@ class App extends React.Component {
 */
   handleLogOut = () => {
     this.props.dispatch(setAuthedUserAction(null));
-  }
+  };
 
   render() {
     return (
@@ -78,7 +78,7 @@ function mapStateToProps(state) {
   return {
     authedUser: state.authedUser,                                   // if autheduser is null that means data from API has not been assigned to store yet.
     avatarURL: state.authedUser ? state.users[state.authedUser].avatarURL : null
-  }
+  };
 }
 
 

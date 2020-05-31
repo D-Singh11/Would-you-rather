@@ -28,7 +28,7 @@ class NewQuestion extends Component {
         else {
             alert("Provide both options to save new question");
         }
-    }
+    };
 
     /**
     * @description Renders the NewQuestion component to DOM

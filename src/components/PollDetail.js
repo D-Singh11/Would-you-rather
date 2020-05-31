@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class PollDetail extends Component {
 
@@ -42,4 +42,4 @@ class PollDetail extends Component {
     }
 }
 
-export default PollDetail
+export default PollDetail;

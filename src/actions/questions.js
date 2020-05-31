@@ -16,7 +16,7 @@ export function setQuestionsAction(questions) {
     return {
         type: RECEIVE_QUESTIONS,
         questions
-    }
+    };
 }
 
 /**
@@ -28,7 +28,7 @@ function saveAnswerAction(question) {
     return {
         type: SAVE_ANSWER,
         question
-    }
+    };
 }
 
 
@@ -41,7 +41,7 @@ function addQuestionAction(question) {
     return {
         type: ADD_QUESTION,
         question
-    }
+    };
 }
 
 
@@ -67,7 +67,7 @@ export function handleSaveAnswer(qid, answer) {
         }).catch(error => {
             alert('Error - Answer not saved Try again');
         });
-    }
+    };
 }
 
 /**
@@ -84,6 +84,6 @@ export function handleAddQuestion(question) {
         return saveQuestion(question).then(savedQuestion => {
             dispatch(addQuestionAction(savedQuestion));
             dispatch(hideLoading());
-        })
-    }
+        });
+    };
 }

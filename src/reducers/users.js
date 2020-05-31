@@ -14,7 +14,7 @@ export default function users(state = {}, action) {
             return {
                 ...state,
                 ...action.users
-            }
+            };
 
         case SAVE_USER_ANSWER:
             return {
@@ -27,7 +27,7 @@ export default function users(state = {}, action) {
                     }
                 }
 
-            }
+            };
 
         default:
             return state;

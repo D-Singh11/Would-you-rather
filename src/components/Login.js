@@ -15,7 +15,7 @@ class Login extends Component {
         event.preventDefault();
         console.log(event.target.value);
         this.props.dispatch(setAuthedUserAction(event.target.value));
-    }
+    };
 
     /**
     * @description Renders the Login component to DOM 

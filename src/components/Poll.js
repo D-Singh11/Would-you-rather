@@ -9,7 +9,7 @@ class Poll extends Component {
     state = {
         text: this.props.selected,
         details: this.props.selected
-    }
+    };
 
     /**
     * @description It is used to save answer of an unanswered question to the backend 
@@ -28,7 +28,7 @@ class Poll extends Component {
                 details: false
             });
         }
-    }
+    };
 
     /**
      * @description Updates the local state of the component by
@@ -42,7 +42,7 @@ class Poll extends Component {
             text: event.target.value
         });
         console.log(event.target.value);
-    }
+    };
 
     /**
     * @description Renders the Poll component to DOM 
@@ -128,7 +128,7 @@ function mapStateToProps({ users, questions, authedUser }, props) {
             avatarURL
 
         },
-    }
+    };
 }
 
 /**

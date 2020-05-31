@@ -9,5 +9,5 @@ export function setAuthedUserAction(id) {
     return {
         type: SET_AUTHED_USER,
         id
-    }
+    };
 }

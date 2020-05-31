@@ -41,11 +41,11 @@ function mapStaeToProps(state) {
             'avatarURL': state.users[id].avatarURL,
             'name': state.users[id].name,
             'total': userAnswers.length + userQuesIds.length,
-        }
-    })
+        };
+    });
     return {
         leaders: leaders.sort((a, b) => b.total - a.total)
-    }
+    };
 }
 
 /**

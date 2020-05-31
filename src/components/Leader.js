@@ -1,10 +1,12 @@
 import React from 'react'
 
 const Leader = ({ leader }) => {
-    let stars = []
+    let stars = [];
+
     for (let i = 0; i < leader.answers + leader.questions; i++) {
         stars.push(<i className="material-icons amber" key={i}>stars</i>)
     }
+
     return (
         <div>
             <div className='row'>
@@ -27,4 +29,4 @@ const Leader = ({ leader }) => {
     )
 }
 
-export default Leader
+export default Leader;

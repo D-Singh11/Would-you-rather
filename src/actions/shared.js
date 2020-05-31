@@ -18,6 +18,6 @@ export function handleInitialData() {
             dispatch(setUsersAction(users));
             dispatch(setQuestionsAction(questions));
             dispatch(hideLoading());
-        })
-    }
+        });
+    };
 }

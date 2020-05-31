@@ -14,7 +14,7 @@ export default function questions(state = {}, action) {
             return {
                 ...state,
                 ...action.questions
-            }
+            };
 
         case SAVE_ANSWER:
             return {
@@ -27,13 +27,13 @@ export default function questions(state = {}, action) {
                     }
                 }
 
-            }
+            };
 
         case ADD_QUESTION:
             return {
                 [action.question.id]: action.question,
                 ...state,
-            }
+            };
         default:
             return state;
     }

@@ -45,7 +45,7 @@ function mapPropsToState({ users, questions, authedUser }, props) {
 
     return {
         qIds
-    }
+    };
 }
 
 /**
