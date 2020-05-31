@@ -14,12 +14,12 @@ class Question extends Component {
                         <span className='card-title'>{author}</span>
                     </div>
                     <div className="card-stacked">
-                        <div className="card-content">
-                            <h5 className="header">Would you rather?</h5>
-                            <span>...{optionOne.text}  <br /> OR ..</span>
+                        <div className="card-content center">
+                            <h3 className=" blue-grey-text">Would you rather?</h3>
+                            <span className=' '>{optionOne.text}  <br /> OR ..</span>
                         </div>
                         <Link to={`/questions/${id}`} className='white-text'>
-                            <div className='card-action amber lighten-2'>
+                            <div className='card-action red lighten-2'>
                                 <p className='center '>
                                     <b>{this.props.type === 'unanswered' ? 'Poll' : 'See details'}</b>
                                 </p>

@@ -57,7 +57,7 @@ class Poll extends Component {
                                         value='optionOne'
                                         onChange={this.handleChange}
                                     />
-                                    <span className='text-black'>{question.optionOne.text}</span>
+                                    <span>{question.optionOne.text}</span>
                                 </label>
                             </p>
                             <p>
