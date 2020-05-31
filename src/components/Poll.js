@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { handleSaveAnswer } from '../actions/questions';
 import PollDetail from './PollDetail';
+import { Redirect } from 'react-router-dom'
 
 
 class Poll extends Component {
@@ -49,6 +50,9 @@ class Poll extends Component {
     */
     render() {
         console.log(this.props);
+        if (this.props.validUrl === false) {
+            return <Redirect to='/questions/invalid_id' />
+        }
         const { question } = this.props;
 
         return (
@@ -114,12 +118,18 @@ in the the body of connect() provided by 'react-redux' library.
 @returns {object} question details
 */
 function mapStateToProps({ users, questions, authedUser }, props) {
-    const question = questions[props.match.params.question_id];
-    const avatarURL = users[question.author].avatarURL;
-    const authorName = users[question.author].name;
-    const selected = users[authedUser].answers[props.match.params.question_id];
+    let selected, question, avatarURL, authorName
+    const validUrl = Object.keys(questions).includes(props.match.params.question_id);
+
+    if (validUrl) {
+        question = questions[props.match.params.question_id];
+        avatarURL = users[question.author].avatarURL;
+        authorName = users[question.author].name;
+        selected = users[authedUser].answers[props.match.params.question_id];
+    }
 
     return {
+        validUrl,
         authedUser,
         selected,
         question: {
