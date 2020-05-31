@@ -1,5 +1,13 @@
 import { RECEIVE_QUESTIONS, SAVE_ANSWER, ADD_QUESTION } from '../actions/questions';
 
+
+/**
+* @description Reducer function used by redux store to update the
+* questions state in store by applying action passed as second parameter.
+* @param {object} state
+* @param {object} action
+* @returns {object} state 
+*/
 export default function questions(state = {}, action) {
     switch (action.type) {
         case RECEIVE_QUESTIONS:
