@@ -57,14 +57,18 @@ export function handleSaveAnswer(qid, answer) {
     return (dispatch, getState) => {
         const authedUser = getState().authedUser;
 
-        dispatch(saveAnswerAction({ authedUser, qid, answer }));
-        dispatch(saveUserAnswerAction({ authedUser, qid, answer }));
-        console.log("State", getState());
+        dispatch(showLoading());
         return saveAnswer({
             authedUser,
             qid,
             answer
-        }).catch(error => {
+        }).then(response=>{
+            dispatch(saveAnswerAction({ authedUser, qid, answer }));
+            dispatch(saveUserAnswerAction({ authedUser, qid, answer }));
+            dispatch(hideLoading());
+        })
+        .catch(error => {
+            dispatch(hideLoading());
             alert('Error - Answer not saved Try again');
         });
     };
