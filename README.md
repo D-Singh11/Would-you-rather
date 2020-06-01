@@ -89,7 +89,7 @@ Voting options are attached to questions. They include:
 ## Backend Server
 
 
-The provided file [`api.js`](src/utils/api.js) contains the methods to perform necessary operations on the backend:
+The provided file [`api.js`](src/utils/_DATA.js) contains the methods to perform necessary operations on the backend:
 
 * [`getInitialData`](#getInitialData)
 * [`saveQuestion`](#saveQuestion)
