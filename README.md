@@ -40,7 +40,7 @@ To view application, open a browser and type specified URL in the URL menu :
 ## Database
 
 
-The [`_DATA.js`](src/utils/api.js) file represents a fake database and methods that provides  access to the data.
+The [`_DATA.js`](src/utils/DATA.js) file represents a fake database and methods that provides  access to the data.
 
 There are two types of objects stored in our database:
 
@@ -89,7 +89,7 @@ Voting options are attached to questions. They include:
 ## Backend Server
 
 
-The provided file [`api.js`](src/utils/_DATA.js) contains the methods to perform necessary operations on the backend:
+The provided file [`api.js`](src/utils/api.js) contains the methods to perform necessary operations on the backend:
 
 * [`getInitialData`](#getInitialData)
 * [`saveQuestion`](#saveQuestion)
