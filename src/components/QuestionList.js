@@ -9,7 +9,6 @@ class QuestionList extends Component {
     * @description Renders the Poll component to DOM 
     */
     render() {
-        console.log(this.props);
         return (
             <ul className="collection" key={this.props.type}>
                 {this.props.qIds.map(id => {

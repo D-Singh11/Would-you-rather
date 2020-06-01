@@ -7,7 +7,6 @@ import { Route, Switch } from 'react-router-dom';
 import NewQuestion from './components/NewQuestion';
 import LeaderBoard from './components/LeaderBoard';
 import Poll from './components/Poll';
-import PollDetail from './components/PollDetail';
 import PageNotFound from './components/PageNotFound';
 import Login from './components/Login';
 import LoadingBar from 'react-redux-loading';

@@ -42,14 +42,12 @@ class Poll extends Component {
         this.setState({
             text: event.target.value
         });
-        console.log(event.target.value);
     };
 
     /**
     * @description Renders the Poll component to DOM 
     */
     render() {
-        console.log(this.props);
         if (this.props.validUrl === false) {
             return <Redirect to='/questions/invalid_id' />
         }

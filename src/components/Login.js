@@ -13,7 +13,6 @@ class Login extends Component {
    */
     handleChange = (event) => {
         event.preventDefault();
-        console.log(event.target.value);
         this.props.dispatch(setAuthedUserAction(event.target.value));
     };
 

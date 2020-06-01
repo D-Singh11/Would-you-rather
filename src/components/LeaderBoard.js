@@ -4,7 +4,6 @@ import Leader from './Leader';
 
 class LeaderBoard extends Component {
     render() {
-        console.log(this.props);
         return (
             <div>
                 <h3>LeaderBoard</h3>
