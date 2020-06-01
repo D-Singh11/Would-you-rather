@@ -6,10 +6,10 @@
 Would You Rather, is a web app that lets its users play the “Would You Rather?” game. The game asks user a question in the form: “Would you rather [option A] or [option B] ?”.
 
 
-Project solidify the understanding of React and Redux to improve the predictability of application’s state. It emphasizes on the state management through a central redux store instead of handling state by React components. It is developed by following Redux's rules for getting, listening, and updating the store.
+This application solidify the understanding of React and Redux to improve the predictability of application’s state. It emphasizes on the state management through a central redux store instead of handling state by React components. It is developed by following Redux's rules for getting, listening, and updating the store.
 
 
-In this application provides following functionality to its users:
+Application provides following functionality to its users:
 
  * See questions they answered and haven’t answered
  * Answer questions
@@ -22,7 +22,7 @@ In this application provides following functionality to its users:
 ## Installation Instructions
 
 
-Install all dependency node modules by navigating to myReads directory and using following command in terminal : 
+Install all dependency node modules by navigating to `would-you-rather` directory and using following command in terminal : 
 >$ npm install
 
 
@@ -40,7 +40,7 @@ To view application, open a browser and type specified URL in the URL menu :
 ## Database
 
 
-The `_DATA.js` file represents a fake database and methods that provides  access to the data.
+The `_DATA.js`(src/utils/api.js) file represents a fake database and methods that provides  access to the data.
 
 There are two types of objects stored in our database:
 
@@ -84,6 +84,8 @@ Voting options are attached to questions. They include:
 
 
 
+
+
 ## Backend Server
 
 
@@ -107,6 +109,8 @@ getInitialData()
 * Returns a Promise which resolves to a JSON object containing users and questions objects.
 * `users` Object where the key is the user’s id and the value is the user object.
 * `questions` Object where the key is the question’s id and the value is the question object
+
+
 
 
 ### `saveQuestion`
@@ -135,6 +139,8 @@ saveQuestion(question)
 | optionOne | Object | The object has a text property and a votes property, which stores an array of the ids of the users who voted for that option|
 | optionTwo | Object | The object has a text property and a votes property, which stores an array of the ids of the users who voted for that option|
 |timestamp|String | The time when the question was created|
+
+
 
 
 ### `saveAnswer`
