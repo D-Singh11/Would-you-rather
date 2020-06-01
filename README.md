@@ -3,7 +3,7 @@
 
 
 ## Introduction
-Would You Rather, is a web app that lets its users play the “Would You Rather?” game. The game asks user a question in the form: “Would you rather [option A] or [option B] ?”.
+Would You Rather, is a web app that lets its users play the `Would You Rather?` game. The game asks user a question in the form: `Would you rather [option A] or [option B] ?`.
 
 
 This application solidify the understanding of React and Redux to improve the predictability of application’s state. It emphasizes on the state management through a central redux store instead of handling state by React components. It is developed by following Redux's rules for getting, listening, and updating the store.
@@ -11,7 +11,7 @@ This application solidify the understanding of React and Redux to improve the pr
 
 Application provides following functionality to its users:
 
- * See questions they answered and haven’t answered
+ * See questions they have and haven’t answered
  * Answer questions
  * See how other people have voted
  * Create new questions
