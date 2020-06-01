@@ -6,7 +6,7 @@
 Would You Rather, is a web app that lets its users play the `Would You Rather?` game. The game asks user a question in the form: `Would you rather [option A] or [option B] ?`.
 
 
-This application solidify the understanding of React and Redux to improve the predictability of application’s state. It emphasizes on the state management through a central redux store instead of handling state by React components. It is developed by following Redux's rules for getting, listening, and updating the store.
+This application solidify the understanding of `React and Redux` to improve the predictability of application’s state. It emphasizes on the state management through a central `redux` store instead of handling state by React components. It is developed by following Redux's rules for `getting, listening, and updating` the store.
 
 
 Application provides following functionality to its users:
@@ -40,7 +40,7 @@ To view application, open a browser and type specified URL in the URL menu :
 ## Database
 
 
-The `_DATA.js`(src/utils/api.js) file represents a fake database and methods that provides  access to the data.
+The [`_DATA.js`](src/utils/api.js) file represents a fake database and methods that provides  access to the data.
 
 There are two types of objects stored in our database:
 
