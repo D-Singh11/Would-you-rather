@@ -23,26 +23,25 @@ class Login extends Component {
         return (
             <div className='row container'>
                 <h1>Login page</h1>
-                <div className="card small col s6 offset-s3">
-                    <label className='text-blue'>Login as :</label>
-                    <select onChange={this.handleChange} className='browser-default'>
-                        <option value="" defaultValue>Choose your username</option>
-                        <option value="sarahedo"
-                            data-icon="https://tylermcginnis.com/would-you-rather/sarah.jpg">
-                            Sarah edo
+                <div className="card small col s6 offset-s3 card-panel hoverable grey lighten-3">
+                    <div className="card-content">
+                        <label className="red-text flow-text">Login as :</label>
+                        <select onChange={this.handleChange} className='browser-default center'>
+                            <option value="" defaultValue>Choose your username</option>
+                            <option value="sarahedo"
+                                data-icon="https://tylermcginnis.com/would-you-rather/sarah.jpg">
+                                Sarah edo
                             </option>
-                        <option value="tylermcginnis"
-                            data-icon="https://tylermcginnis.com/would-you-rather/tyler.jpg">
-                            Tyler Mcginnis
+                            <option value="tylermcginnis"
+                                data-icon="https://tylermcginnis.com/would-you-rather/tyler.jpg">
+                                Tyler Mcginnis
                             </option>
-                        <option value="johndoe"
-                            data-icon="https://tylermcginnis.com/would-you-rather/dan.jpg">
-                            John Doe
+                            <option value="johndoe"
+                                data-icon="https://tylermcginnis.com/would-you-rather/dan.jpg">
+                                John Doe
                             </option>
-                    </select>
-                    <button className="btn-large waves-effect waves-light right" type="submit" name="action">
-                        Login
-                    </button>
+                        </select>
+                    </div>
                 </div>
             </div>
         )
